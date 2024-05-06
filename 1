@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 3
+
+int sum_of_matrix(int matrix[ROWS][COLS], int row, int col) {
+    if (row < 0 || col < 0)
+        return 0;
+    else
+        return matrix[row][col] + sum_of_matrix(matrix, row - 1, col) + sum_of_matrix(matrix, row, col - 1) - sum_of_matrix(matrix, row - 1, col - 1);
+}
+
+int main() {
+    int matrix[ROWS][COLS] = {{1, 2, 3},
+                               {4, 5, 6},
+                               {7, 8, 9}};
+    
+    int total_sum = sum_of_matrix(matrix, ROWS - 1, COLS - 1);
+    printf("Shuma e elementeve te kesaj matrice eshte: %d\n", total_sum);
+
+    return 0;
+}
