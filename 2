@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+long long int factorial_sum(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return n * factorial_sum(n - 1) + factorial_sum(n - 1);
+}
+
+int main() {
+    int n;
+    printf("Vendos vleren e n: ");
+    scanf("%d", &n);
+    printf("Shuma faktoriale nga 1 deri ne %d eshte: %lld\n", n, factorial_sum(n));
+    return 0;
+}
