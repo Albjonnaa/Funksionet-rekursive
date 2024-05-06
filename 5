@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+long long int produkt_i_numrave_cift(int n) {
+    if (n == 0)
+        return 1;
+    else
+        return n * produkt_i_numrave_cift(n - 2);
+}
+
+int main() {
+    int n;
+    printf("Vendosni vleren e n: ");
+    scanf("%d", &n);
+    printf("Produkti i numrave cift %d eshte: %lld\n", n, produkt_i_numrave_cift(n));
+    return 0;
+}
