@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int shuma_e_numrave_të_cift(int a[], int num, int sum) {
+    if (num < 0)
+        return sum;
+    else {
+        if (a[num] % 2 == 0)
+            sum += a[num];
+        return shuma_e_numrave_të_cift(a, num - 1, sum);
+    }
+}
+
+int main() {
+    int a[100], num, i, sum = 0;
+    printf("Jepni numrin e elementeve të vargut\n");
+    scanf("%d", &num);
+    printf("Jepni elementet e vargut\n");
+    for (i = 0; i < num; i++) {
+        scanf("%d", &a[i]);
+    }
+    printf("Shuma e numrave të çift në varg është: %d\n", shuma_e_numrave_të_cift(a, num - 1, sum));
+    return 0;
+}
